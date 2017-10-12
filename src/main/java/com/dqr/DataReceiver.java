@@ -44,11 +44,11 @@ public class DataReceiver {
         long beginTime;
         long endTime = -1000L * 60L;
 
-        while(count++ < 2) {
+        while(count++ < 100) {
 //            beginTime = System.currentTimeMillis();
             trades = service.getTrades(CurrencyPair.BTC_USD);
 //            trades = service.getTrades(CurrencyPair.BTC_USD, System.currentTimeMillis() - 1000L * 60L,
-//                HitbtcTrades.HitbtcTradesSortField.SORT_BY_TIMESTAMP, HitbtcTrades.HitbtcTradesSortDirection.SORT_DESCENDING, lastId, 1000L);
+//                HitbtcTrades.HitbtcTradesSortField.SORT_BY_TIMESTAMP, HitbtcTrades.HitbtcTradesSortDirection.SORT_DESCENDING, lastIdNum, 10L);
 //            trades = service.getTrades(CurrencyPair.BTC_USD, System.currentTimeMillis() - (endTime - beginTime),
 //                HitbtcTrades.HitbtcTradesSortField.SORT_BY_TIMESTAMP, HitbtcTrades.HitbtcTradesSortDirection.SORT_DESCENDING, lastId, 1000L);
 //            endTime = System.currentTimeMillis();
