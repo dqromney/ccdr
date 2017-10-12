@@ -3,8 +3,8 @@ package com.dqr;
 import lombok.extern.java.Log;
 import org.knowm.xchange.Exchange;
 import org.knowm.xchange.currency.CurrencyPair;
+import org.knowm.xchange.dto.marketdata.Trade;
 import org.knowm.xchange.dto.marketdata.Trades;
-import org.knowm.xchange.hitbtc.dto.marketdata.HitbtcTrades;
 import org.knowm.xchange.service.marketdata.MarketDataService;
 
 import java.io.IOException;
@@ -39,17 +39,32 @@ public class DataReceiver {
 
         Trades trades;
         int count = 0;
-        long lastId = 0;
+        String lastId = "";
+        long lastIdNum = 0;
+        long beginTime;
+        long endTime = -1000L * 60L;
 
-        while(count++ < 10) {
-            trades = service.getTrades(CurrencyPair.BTC_USD, System.currentTimeMillis(),
-                HitbtcTrades.HitbtcTradesSortField.SORT_BY_TIMESTAMP, HitbtcTrades.HitbtcTradesSortDirection.SORT_DESCENDING, lastId, 1000L);
-//        trades = service.getTrades(CurrencyPair.BTC_USD, System.currentTimeMillis() - 1000 * 60,
+        while(count++ < 2) {
+//            beginTime = System.currentTimeMillis();
+            trades = service.getTrades(CurrencyPair.BTC_USD);
+//            trades = service.getTrades(CurrencyPair.BTC_USD, System.currentTimeMillis() - 1000L * 60L,
 //                HitbtcTrades.HitbtcTradesSortField.SORT_BY_TIMESTAMP, HitbtcTrades.HitbtcTradesSortDirection.SORT_DESCENDING, lastId, 1000L);
-            if (trades.getTrades().size() > 0) {
-                lastId = trades.getlastID();
-                System.out.println("Trades, last minute, Size= " + trades.getTrades().size());
-                System.out.println(trades.toString());
+//            trades = service.getTrades(CurrencyPair.BTC_USD, System.currentTimeMillis() - (endTime - beginTime),
+//                HitbtcTrades.HitbtcTradesSortField.SORT_BY_TIMESTAMP, HitbtcTrades.HitbtcTradesSortDirection.SORT_DESCENDING, lastId, 1000L);
+//            endTime = System.currentTimeMillis();
+            if (trades.getTrades().size() > 0 && trades.getlastID() > lastIdNum) {
+                System.out.println("\nTrades, last minute, Size= " + trades.getTrades().size());
+                String finalLastId = lastId;
+                long finalLastIdNum = lastIdNum;
+                trades.getTrades().forEach((Trade trade) -> {
+                    if (Long.valueOf(trade.getId()) > finalLastIdNum) {
+                        System.out.println(trade.toString());
+                    }
+                });
+                lastId = new String(String.valueOf(new Long(trades.getlastID())));
+                lastIdNum = trades.getlastID();
+            } else {
+                System.out.print('.');
             }
         }
 //        try {
