@@ -12,7 +12,7 @@ import java.util.concurrent.CountDownLatch;
 
 
 /**
- * Hello world!
+ * Crypto Currency Data Receiver (HitBtc)
  */
 @Log
 public class DataReceiver {
