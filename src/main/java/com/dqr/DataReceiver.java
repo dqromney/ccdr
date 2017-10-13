@@ -3,11 +3,13 @@ package com.dqr;
 import lombok.extern.java.Log;
 import org.knowm.xchange.Exchange;
 import org.knowm.xchange.currency.CurrencyPair;
-import org.knowm.xchange.dto.marketdata.Trade;
 import org.knowm.xchange.dto.marketdata.Trades;
+import org.knowm.xchange.hitbtc.dto.marketdata.HitbtcTrades;
 import org.knowm.xchange.service.marketdata.MarketDataService;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.CountDownLatch;
 
 
@@ -37,6 +39,7 @@ public class DataReceiver {
     private void execute(MarketDataService service) throws IOException {
         log.info("execute()...");
 
+        Timer timer = new Timer();
         Trades trades;
         int count = 0;
         String lastId = "";
@@ -44,6 +47,8 @@ public class DataReceiver {
         long beginTime;
         long endTime = -1000L * 60L;
 
+        timer.schedule(new DataTask(service), 0, 1000L * 5L);
+/*
         while(count++ < 100) {
 //            beginTime = System.currentTimeMillis();
             trades = service.getTrades(CurrencyPair.BTC_USD);
@@ -67,6 +72,7 @@ public class DataReceiver {
                 System.out.print('.');
             }
         }
+*/
 //        try {
 //            WebSocketContainer container = ContainerProvider.getWebSocketContainer();
 //            // String uri = "ws://echo.websocket.org:80/";
@@ -80,4 +86,28 @@ public class DataReceiver {
 //        }
     }
 
+}
+
+class DataTask extends TimerTask {
+    Trades trades;
+    static MarketDataService service;
+
+    public DataTask(MarketDataService service) {
+        this.service = service;
+    }
+
+    /**
+     * The action to be performed by this timer task.
+     */
+    @Override
+    public void run() {
+        try {
+            trades = this.service.getTrades(CurrencyPair.BTC_USD, System.currentTimeMillis() - 1000 * 5,
+                HitbtcTrades.HitbtcTradesSortField.SORT_BY_TIMESTAMP, HitbtcTrades.HitbtcTradesSortDirection.SORT_DESCENDING, 0L, 1000L);
+            System.out.println("Trades, last 5 seconds, Size= " + trades.getTrades().size());
+            System.out.println(trades.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
