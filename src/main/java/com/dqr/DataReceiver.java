@@ -2,14 +2,11 @@ package com.dqr;
 
 import lombok.extern.java.Log;
 import org.knowm.xchange.Exchange;
-import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.marketdata.Trades;
-import org.knowm.xchange.hitbtc.dto.marketdata.HitbtcTrades;
 import org.knowm.xchange.service.marketdata.MarketDataService;
 
 import java.io.IOException;
 import java.util.Timer;
-import java.util.TimerTask;
 import java.util.concurrent.CountDownLatch;
 
 
@@ -20,6 +17,8 @@ import java.util.concurrent.CountDownLatch;
 public class DataReceiver {
 
     final static CountDownLatch messageLatch = new CountDownLatch(1);
+    final static Long FETCH_FREQUENCY = 1000L * 5L;
+    
     private Exchange hitbtcExchange;
     private MarketDataService marketDataService;
 
@@ -47,7 +46,7 @@ public class DataReceiver {
         long beginTime;
         long endTime = -1000L * 60L;
 
-        timer.schedule(new DataTask(service), 0, 1000L * 5L);
+        timer.schedule(new DataTask(service), 0, FETCH_FREQUENCY);
 /*
         while(count++ < 100) {
 //            beginTime = System.currentTimeMillis();
@@ -86,28 +85,4 @@ public class DataReceiver {
 //        }
     }
 
-}
-
-class DataTask extends TimerTask {
-    Trades trades;
-    static MarketDataService service;
-
-    public DataTask(MarketDataService service) {
-        this.service = service;
-    }
-
-    /**
-     * The action to be performed by this timer task.
-     */
-    @Override
-    public void run() {
-        try {
-            trades = this.service.getTrades(CurrencyPair.BTC_USD, System.currentTimeMillis() - 1000 * 5,
-                HitbtcTrades.HitbtcTradesSortField.SORT_BY_TIMESTAMP, HitbtcTrades.HitbtcTradesSortDirection.SORT_DESCENDING, 0L, 1000L);
-            System.out.println("Trades, last 5 seconds, Size= " + trades.getTrades().size());
-            System.out.println(trades.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
