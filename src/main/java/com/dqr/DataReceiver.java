@@ -39,8 +39,10 @@ public class DataReceiver {
         log.info("execute()...");
 
         Timer timer = new Timer();
+        TradeDataBag tradeDataBag = new TradeDataBag();
+        TradeAdder tradeAdder = new TradeAdder(tradeDataBag);
 
-        timer.schedule(new DataTask(service, CurrencyPair.BTC_USD), 0, FETCH_FREQUENCY);
+        timer.schedule(new DataTask(service, CurrencyPair.BTC_USD, tradeDataBag), 0, FETCH_FREQUENCY);
 
 //        try {
 //            WebSocketContainer container = ContainerProvider.getWebSocketContainer();
