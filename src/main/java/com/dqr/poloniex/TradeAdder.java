@@ -1,6 +1,6 @@
-package com.dqr;
+package com.dqr.poloniex;
 
-import org.knowm.xchange.dto.marketdata.Trade;
+import org.knowm.xchange.poloniex.dto.marketdata.PoloniexPublicTrade;
 
 import java.util.Iterator;
 
@@ -20,8 +20,8 @@ public class TradeAdder implements Observer {
             int counter = 0;
             Iterator i = bag.iterator();
             while (i.hasNext()) {
-                Trade trade = (Trade) i.next();
-                // System.out.println("Observer: " + trade.toString());
+                PoloniexPublicTrade trade = (PoloniexPublicTrade) i.next();
+                System.out.println("Observer: " + trade.toString());
                 counter += 1;
             }
             System.out.println("Total trades received: : " + counter);

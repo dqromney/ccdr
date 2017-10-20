@@ -3,19 +3,28 @@ package com.dqr;
 import org.knowm.xchange.dto.marketdata.Trade;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 
 public class TradeDataBag {
+    private HashSet set = new HashSet();
     private ArrayList list = new ArrayList();
     private ArrayList observers = new ArrayList();
 
     public void add(Trade t) {
+        set.add(t);
         list.add(t);
         notifyObservers();
     }
 
     public Iterator iterator() {
-        return list.iterator();
+        return set.iterator();
+        // return list.iterator();
+    }
+
+    public Trade remove(Trade trade) {
+        set.remove(trade);
+        return trade;
     }
 
     public Trade remove(int index) {

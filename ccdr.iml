@@ -13,6 +13,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="R User Library" level="project" />
     <orderEntry type="library" name="R Skeletons" level="application" />
+    <orderEntry type="library" name="Maven: org.knowm.xchange:xchange-core:4.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.knowm.xchange:xchange-gdax:4.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.knowm.xchange:xchange-poloniex:4.2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.knowm.xchange:xchange-hitbtc:4.2.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: org.knowm.xchange:xchange-core:4.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.github.mmazi:rescu:1.9.0" level="project" />
