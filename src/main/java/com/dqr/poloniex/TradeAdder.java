@@ -3,6 +3,7 @@ package com.dqr.poloniex;
 import org.knowm.xchange.poloniex.dto.marketdata.PoloniexPublicTrade;
 
 import java.util.Iterator;
+import java.util.SortedSet;
 
 public class TradeAdder implements Observer {
 
@@ -17,6 +18,10 @@ public class TradeAdder implements Observer {
     public void update(TradeDataBag o) {
         if (o == bag) {
             System.out.println("The contents of the TradeDataBag have changed.");
+
+            SortedSet<String> sortedKeys =  bag.sortByTradeId();
+            sortedKeys.forEach(k -> System.out.println(k));
+
             int counter = 0;
             Iterator i = bag.iterator();
             while (i.hasNext()) {

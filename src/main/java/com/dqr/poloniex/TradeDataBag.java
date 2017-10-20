@@ -2,9 +2,7 @@ package com.dqr.poloniex;
 
 import org.knowm.xchange.poloniex.dto.marketdata.PoloniexPublicTrade;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Poloniex Trade Bag.
@@ -53,4 +51,8 @@ public class TradeDataBag {
         observers.add(o);
     }
 
+    public SortedSet<String> sortByTradeId() {
+        SortedSet<String> keys = new TreeSet<String>(map.keySet());
+        return keys;
+    }
 }
