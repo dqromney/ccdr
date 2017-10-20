@@ -19,7 +19,7 @@ public class TradeAdder implements Observer {
         if (o == bag) {
             System.out.println("The contents of the TradeDataBag have changed.");
 
-            SortedSet<String> sortedKeys =  bag.sortByTradeId();
+            SortedSet<String> sortedKeys =  bag.sortKeyByTradeId();
             sortedKeys.forEach(k -> System.out.println(k));
 
             int counter = 0;

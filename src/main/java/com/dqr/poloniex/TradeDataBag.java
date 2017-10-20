@@ -51,8 +51,9 @@ public class TradeDataBag {
         observers.add(o);
     }
 
-    public SortedSet<String> sortByTradeId() {
+    public SortedSet<String> sortKeyByTradeId() {
         SortedSet<String> keys = new TreeSet<String>(map.keySet());
         return keys;
     }
+
 }
