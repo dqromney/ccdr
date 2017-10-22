@@ -5,7 +5,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for simple DataReceiver.
+ * Unit test for simple PoloniexDataReceiver.
  */
 public class AppTest 
     extends TestCase

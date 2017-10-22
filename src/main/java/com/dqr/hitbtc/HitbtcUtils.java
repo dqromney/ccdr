@@ -1,4 +1,4 @@
-package com.dqr;
+package com.dqr.hitbtc;
 
 import org.knowm.xchange.Exchange;
 import org.knowm.xchange.ExchangeFactory;

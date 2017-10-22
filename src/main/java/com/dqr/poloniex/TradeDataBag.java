@@ -6,7 +6,7 @@ import java.util.*;
 
 /**
  * Poloniex Trade Bag.
- *
+ * <p>
  * Created by dqromney on 10/19/17.
  */
 public class TradeDataBag {
@@ -14,6 +14,7 @@ public class TradeDataBag {
     private ArrayList observers = new ArrayList();
 
     public void add(PoloniexPublicTrade t) {
+        // Check if duplicate key, i.e. trade ID
         if (!map.containsKey(t.getTradeID())) {
             map.put(t.getTradeID(), t);
             notifyObservers();

@@ -28,7 +28,7 @@ public class MyClientEndpoint {
     public void processMessage(String message) {
         //System.out.println("\nReceived message in client: " + message);
         System.out.println(message);
-        //DataReceiver.messageLatch.countDown();
+        //PoloniexDataReceiver.messageLatch.countDown();
     }
 
     @OnError
