@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17272954-d30b-4bc6-9455-f2a5395066cc" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java" afterPath="$PROJECT_DIR$/src/main/java/com/dqr/hitbtc/dto/marketdata/MarketDataIncrementalRefresh.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataSnapshotFullRefresh.java" afterPath="$PROJECT_DIR$/src/main/java/com/dqr/hitbtc/dto/marketdata/MarketDataSnapshotFullRefresh.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java" afterPath="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dqr/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/dqr/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dqr/MyClientEndpoint.java" afterPath="$PROJECT_DIR$/src/main/java/com/dqr/MyClientEndpoint.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="245">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,7 +33,7 @@
         </entry>
       </file>
       <file leaf-file-name="MarketDataSnapshotFullRefresh.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataSnapshotFullRefresh.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/hitbtc/dto/marketdata/MarketDataSnapshotFullRefresh.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1470">
               <caret line="98" column="73" lean-forward="true" selection-start-line="98" selection-start-column="73" selection-end-line="98" selection-end-column="73" />
@@ -62,7 +65,7 @@
               <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1966#1967#0" expanded="true" />
+                <element signature="e#1980#1981#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,8 +94,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarketDataIncrementalRefresh.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java">
+      <file leaf-file-name="MarketDataIncrementalRefresh.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/hitbtc/dto/marketdata/MarketDataIncrementalRefresh.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
@@ -178,10 +181,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/Trade.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/RootObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefreshV2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dqr/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dqr/MyClientEndpoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataSnapshotFullRefresh.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dqr/Main.java" />
       </list>
     </option>
   </component>
@@ -341,36 +344,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dqr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccdr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ccdr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dqr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marketdata" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -905,7 +878,7 @@
       <workItem from="1506915343481" duration="10353000" />
       <workItem from="1507775365181" duration="18380000" />
       <workItem from="1507932714962" duration="14213000" />
-      <workItem from="1508647162131" duration="14007000" />
+      <workItem from="1508647162131" duration="14225000" />
     </task>
     <task id="LOCAL-00001" summary="Adding .gitIgnore">
       <created>1507783942826</created>
@@ -1012,7 +985,14 @@
       <option name="project" value="LOCAL" />
       <updated>1508816380078</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added event driven updates - Add comments.">
+      <created>1508816497242</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1508816497242</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1030,7 +1010,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92180000" />
+    <option name="totallyTimeSpent" value="92398000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="43" width="1564" height="961" extended-state="0" />
@@ -1045,12 +1025,12 @@
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="24" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3452244" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36409155" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4377224" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4377224" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30994153" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25263157" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31340343" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31340343" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="23" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30723608" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1102,7 +1082,8 @@
     <MESSAGE value="Added event driven updates - Working trades with Poloniex." />
     <MESSAGE value="Added event driven updates - Added DR's for Poloniex and Hitbtc, and Everything feed from Hitbtc." />
     <MESSAGE value="Added event driven updates - Parsing Hitbtc feed to DTOs!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added event driven updates - Parsing Hitbtc feed to DTOs!" />
+    <MESSAGE value="Added event driven updates - Add comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added event driven updates - Add comments." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1127,7 +1108,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/dqr/Main.java</url>
-          <line>60</line>
+          <line>37</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
@@ -1526,12 +1507,12 @@
           <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1966#1967#0" expanded="true" />
+            <element signature="e#1980#1981#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataSnapshotFullRefresh.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/hitbtc/dto/marketdata/MarketDataSnapshotFullRefresh.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1470">
           <caret line="98" column="73" lean-forward="true" selection-start-line="98" selection-start-column="73" selection-end-line="98" selection-end-column="73" />
@@ -1541,20 +1522,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/hitbtc/dto/marketdata/MarketDataIncrementalRefresh.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        <state relative-caret-position="245">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

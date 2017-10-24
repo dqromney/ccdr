@@ -1,4 +1,4 @@
-package com.dqr.dto.marketdata;
+package com.dqr.hitbtc.dto.marketdata;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

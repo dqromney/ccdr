@@ -1,7 +1,7 @@
 package com.dqr;
 
-import com.dqr.dto.marketdata.MarketDataIncrementalRefresh;
-import com.dqr.dto.marketdata.MarketDataSnapshotFullRefresh;
+import com.dqr.hitbtc.dto.marketdata.MarketDataIncrementalRefresh;
+import com.dqr.hitbtc.dto.marketdata.MarketDataSnapshotFullRefresh;
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
