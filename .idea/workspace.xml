@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="17272954-d30b-4bc6-9455-f2a5395066cc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java" afterPath="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,8 +20,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+            <state relative-caret-position="246">
+              <caret line="40" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -28,7 +29,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarketDataSnapshotFullRefresh.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MarketDataSnapshotFullRefresh.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataSnapshotFullRefresh.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1470">
@@ -90,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarketDataIncrementalRefresh.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MarketDataIncrementalRefresh.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -177,10 +178,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/Trade.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/RootObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefreshV2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dqr/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dqr/MyClientEndpoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataSnapshotFullRefresh.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java" />
       </list>
     </option>
   </component>
@@ -904,7 +905,7 @@
       <workItem from="1506915343481" duration="10353000" />
       <workItem from="1507775365181" duration="18380000" />
       <workItem from="1507932714962" duration="14213000" />
-      <workItem from="1508647162131" duration="13904000" />
+      <workItem from="1508647162131" duration="14007000" />
     </task>
     <task id="LOCAL-00001" summary="Adding .gitIgnore">
       <created>1507783942826</created>
@@ -1004,7 +1005,14 @@
       <option name="project" value="LOCAL" />
       <updated>1508816182251</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added event driven updates - Parsing Hitbtc feed to DTOs!">
+      <created>1508816380078</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1508816380078</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1022,7 +1030,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92077000" />
+    <option name="totallyTimeSpent" value="92180000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="43" width="1564" height="961" extended-state="0" />
@@ -1512,16 +1520,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/MyClientEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -1533,20 +1531,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataSnapshotFullRefresh.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state relative-caret-position="1470">
+          <caret line="98" column="73" lean-forward="true" selection-start-line="98" selection-start-column="73" selection-end-line="98" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataSnapshotFullRefresh.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="98" column="73" lean-forward="true" selection-start-line="98" selection-start-column="73" selection-end-line="98" selection-end-column="73" />
+        <state relative-caret-position="246">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dqr/dto/marketdata/MarketDataIncrementalRefresh.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
