@@ -13,6 +13,8 @@ import java.util.logging.Level;
 
 /**
  * Crypto Currency Data Receiver (HitBtc)
+ * 
+ * @see http://hitbtc-com.github.io/hitbtc-api/#marketstreaming
  */
 @Log
 public class DataReceiver implements IDataReceiver {
@@ -28,7 +30,7 @@ public class DataReceiver implements IDataReceiver {
         try {
             WebSocketContainer container = ContainerProvider.getWebSocketContainer();
             // String uri = "ws://echo.websocket.org:80/";
-            // String uri = "ws://demo-api.hitbtc.com:80/";
+            // String uri = "ws://demo-api.hitbtc.com:80";
             String uri = "ws://api.hitbtc.com:80";
             System.out.println("Connecting to " + uri);
             container.connectToServer(MyClientEndpoint.class, URI.create(uri));
