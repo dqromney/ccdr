@@ -39,10 +39,10 @@ public class MyClientEndpoint {
         MarketDataIncrementalRefresh marketDataInc;
         MarketDataSnapshotFullRefresh marketDataFull;
         if (message.contains("MarketDataSnapshotFullRefresh"))  {
-            marketDataFull = parseFull(message);
+            marketDataFull = parseMarketDataSnapshotFullRefresh(message);
             System.out.println(marketDataFull.toString());
         } else {
-            marketDataInc = parseInc(message);
+            marketDataInc = parseMarketDataIncrementalRefresh(message);
             System.out.println(marketDataInc.toString());
         }
         //Pretty JSON print
@@ -56,16 +56,16 @@ public class MyClientEndpoint {
         t.printStackTrace();
     }
 
-    private MarketDataIncrementalRefresh parseInc(String pMssage) {
+    private MarketDataIncrementalRefresh parseMarketDataIncrementalRefresh(String pMssage) {
         MarketDataIncrementalRefresh marketData = null;
         try {
             // ObjectMapper mapper = new ObjectMapper();
             marketData = mapper.readValue(pMssage, MarketDataIncrementalRefresh.class);
             // System.out.println(marketData.toString());
-
+        
             //Pretty print
             // System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(marketData));
-
+        // JsonParseException
         } catch (JsonGenerationException e) {
             e.printStackTrace();
         } catch (JsonMappingException e) {
@@ -76,7 +76,7 @@ public class MyClientEndpoint {
         return marketData;
     }
 
-    private MarketDataSnapshotFullRefresh parseFull(String pMessage) {
+    private MarketDataSnapshotFullRefresh parseMarketDataSnapshotFullRefresh(String pMessage) {
         MarketDataSnapshotFullRefresh marketData = null;
         try {
             // ObjectMapper mapper = new ObjectMapper();
