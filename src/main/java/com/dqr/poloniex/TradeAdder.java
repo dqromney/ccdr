@@ -25,7 +25,7 @@ public class TradeAdder implements Observer {
             Iterator i = bag.iterator();
             while (i.hasNext()) {
                 PoloniexPublicTrade trade = (PoloniexPublicTrade) i.next();
-                System.out.println("Observer: " + trade.toString());
+                System.out.println("IObserver: " + trade.toString());
                 counter ++;
             }
             System.out.println("Total trades received: : " + counter);

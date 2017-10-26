@@ -36,7 +36,7 @@ public class TradeDataBag {
         return null;
     }
 
-    public void removeObserver(Observer o) {
+    public void removeObserver(IObserver o) {
         observers.remove(o);
     }
 
@@ -44,12 +44,12 @@ public class TradeDataBag {
         // loop through and notify each observer
         Iterator i = observers.iterator();
         while (i.hasNext()) {
-            Observer o = (Observer) i.next();
+            IObserver o = (IObserver) i.next();
             o.update(this);
         }
     }
 
-    public void addObserver(Observer o) {
+    public void addObserver(IObserver o) {
         observers.add(o);
     }
 }

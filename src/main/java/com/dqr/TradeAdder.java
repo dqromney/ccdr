@@ -4,7 +4,7 @@ import org.knowm.xchange.dto.marketdata.Trade;
 
 import java.util.Iterator;
 
-public class TradeAdder implements Observer {
+public class TradeAdder implements IObserver {
 
     private TradeDataBag bag;
 
@@ -21,7 +21,7 @@ public class TradeAdder implements Observer {
             Iterator i = bag.iterator();
             while (i.hasNext()) {
                 Trade trade = (Trade) i.next();
-                // System.out.println("Observer: " + trade.toString());
+                // System.out.println("IObserver: " + trade.toString());
                 counter += 1;
             }
             System.out.println("Total trades received: : " + counter);

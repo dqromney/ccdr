@@ -1,7 +1,7 @@
 package com.dqr.poloniex;
 
 /**
- * Observer interface.
+ * IObserver interface.
  * <p/>
  * User: dqromney
  * Date: Nov 29, 2010
