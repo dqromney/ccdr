@@ -1,5 +1,6 @@
-package com.dqr;
+package com.dqr.hitbtc;
 
+import com.dqr.IDataReceiver;
 import lombok.extern.java.Log;
 
 import javax.websocket.ContainerProvider;
@@ -17,7 +18,7 @@ import java.util.logging.Level;
  * @see http://hitbtc-com.github.io/hitbtc-api/#marketstreaming
  */
 @Log
-public class DataReceiver implements IDataReceiver {
+public class HitbtcFeedDataReceiver implements IDataReceiver {
 
     final static CountDownLatch messageLatch = new CountDownLatch(1);
 

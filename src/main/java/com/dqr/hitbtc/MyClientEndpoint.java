@@ -1,4 +1,4 @@
-package com.dqr;
+package com.dqr.hitbtc;
 
 import com.dqr.hitbtc.dto.marketdata.MarketDataIncrementalRefresh;
 import com.dqr.hitbtc.dto.marketdata.MarketDataSnapshotFullRefresh;
@@ -48,7 +48,7 @@ public class MyClientEndpoint {
         //Pretty JSON print
         // System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(marketData));
         
-        // DataReceiver.messageLatch.countDown();
+        // HitbtcFeedDataReceiver.messageLatch.countDown();
     }
 
     @OnError

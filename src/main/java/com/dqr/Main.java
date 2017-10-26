@@ -1,5 +1,6 @@
 package com.dqr;
 
+import com.dqr.hitbtc.HitbtcFeedDataReceiver;
 import com.dqr.hitbtc.HitbtcDataReceiver;
 import com.dqr.poloniex.PoloniexDataReceiver;
 import lombok.extern.java.Log;
@@ -32,7 +33,7 @@ public class Main {
         }
 
         // HitBTC Data feed: All currencies
-        DataReceiver dr = new DataReceiver();
+        HitbtcFeedDataReceiver dr = new HitbtcFeedDataReceiver();
         dr.init(args);
         dr.execute();
     }
