@@ -19,6 +19,18 @@ import java.util.concurrent.TimeUnit;
 //import org.apache.logging.log4j.Logger;
 
 /**
+ * Example:
+ * Oct 27, 2017 9:12:11 AM com.dqr.poloniex.handler.PoloniexSubscription call
+ * INFO: ["ETH_OMG","0.02620298","0.02619410","0.02556506","0.01976365","865.37307974","33706.03940440",0,"0.02749331","0.02501681"]
+ * Oct 27, 2017 9:12:12 AM com.dqr.poloniex.WSSClient lambda$run$0
+ * INFO: Disconnected
+ * Oct 27, 2017 9:12:12 AM com.dqr.poloniex.WSSClient lambda$run$0
+ * INFO: Connecting...
+ * Oct 27, 2017 9:12:26 AM com.dqr.poloniex.WSSClient lambda$run$0
+ * INFO: Connected
+ * Oct 27, 2017 9:12:32 AM com.dqr.poloniex.handler.PoloniexSubscription call
+ * INFO: ["BTC_GNO","0.01226015","0.01244149","0.01222693","0.00360754","18.30530498","1511.65879669",0,"0.01246500","0.01160405"]
+ *
  * @author David
  */
 @Log

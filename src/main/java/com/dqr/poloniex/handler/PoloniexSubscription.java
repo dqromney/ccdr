@@ -24,7 +24,7 @@ public class PoloniexSubscription implements Action1<PubSubData> {
     @Override
     public void call(PubSubData event) {
         try {
-            log.info(event.arguments().toString());
+            System.out.println(event.arguments().toString());
         } catch (Exception ex) {
             log.warning("Exception processing event data - " + ex.getMessage());
         }
