@@ -1,6 +1,7 @@
-package com.dqr.hitbtc;
+package com.dqr.poloniex;
 
 import com.dqr.IDataReceiver;
+import com.dqr.hitbtc.MyClientEndpoint;
 import lombok.extern.java.Log;
 
 import javax.websocket.ContainerProvider;
@@ -18,7 +19,7 @@ import java.util.logging.Level;
  * @see http://hitbtc-com.github.io/hitbtc-api/#marketstreaming
  */
 @Log
-public class HitbtcFeedDataReceiver implements IDataReceiver {
+public class PoloniexFeedDataReceiver implements IDataReceiver {
 
     final static CountDownLatch messageLatch = new CountDownLatch(1);
 
@@ -32,9 +33,9 @@ public class HitbtcFeedDataReceiver implements IDataReceiver {
             WebSocketContainer container = ContainerProvider.getWebSocketContainer();
             // String uri = "ws://echo.websocket.org:80/";
             // String uri = "ws://demo-api.hitbtc.com:80";
-            String uri = "ws://api.hitbtc.com:80";
+            String uri = "wss://api.poloniex.com";
             System.out.println("Connecting to " + uri);
-            container.connectToServer(MyClientEndpoint.class, URI.create(uri));
+            container.connectToServer(PoloniexEndpoint.class, URI.create(uri));
             // Times out in 100 seconds
             messageLatch.await(100, TimeUnit.SECONDS);
         } catch (DeploymentException | InterruptedException | IOException ex) {
