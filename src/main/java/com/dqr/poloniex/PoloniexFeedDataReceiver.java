@@ -41,7 +41,8 @@ public class PoloniexFeedDataReceiver implements IDataReceiver {
         try (WSSClient poloniexWSSClient = new WSSClient(ENDPOINT_URL, DEFAULT_REALM)) {
             poloniexWSSClient.subscribe(PoloniexSubscription.TICKER);
             poloniexWSSClient.subscribe(new PoloniexSubscription("USDT_BTC"));
-            poloniexWSSClient.run(60000);
+            // poloniexWSSClient.run(60000);
+            poloniexWSSClient.run(180000);
         }
     }
 
