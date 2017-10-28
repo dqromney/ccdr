@@ -1,5 +1,6 @@
 package com.dqr.poloniex.handler;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.java.Log;
 import rx.functions.Action1;
 import ws.wamp.jawampa.PubSubData;
@@ -13,18 +14,21 @@ import ws.wamp.jawampa.PubSubData;
 @Log
 public class PoloniexSubscription implements Action1<PubSubData> {
     public static final PoloniexSubscription TICKER = new PoloniexSubscription("ticker");
+    public static ObjectMapper objectMapper;
 
     // protected final static Logger LOG = LogManager.getLogger();
     public final String feedName;
 
     public PoloniexSubscription(String feedName) {
         this.feedName = feedName;
+        this.objectMapper = new ObjectMapper();
     }
 
     @Override
     public void call(PubSubData event) {
         try {
             System.out.println(event.arguments().toString());
+            // TODO Do the parsing here
         } catch (Exception ex) {
             log.warning("Exception processing event data - " + ex.getMessage());
         }
