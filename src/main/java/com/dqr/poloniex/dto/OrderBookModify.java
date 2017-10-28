@@ -32,5 +32,24 @@ public final class OrderBookModify {
             this.rate = rate;
             this.amount = amount;
         }
+
+        @Override
+        public String toString() {
+            final StringBuilder sb = new StringBuilder("Data{");
+            sb.append("type='").append(type).append('\'');
+            sb.append(", rate='").append(rate).append('\'');
+            sb.append(", amount='").append(amount).append('\'');
+            sb.append('}');
+            return sb.toString();
+        }
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("OrderBookModify{");
+        sb.append("type='").append(type).append('\'');
+        sb.append(", data=").append(data);
+        sb.append('}');
+        return sb.toString();
     }
 }

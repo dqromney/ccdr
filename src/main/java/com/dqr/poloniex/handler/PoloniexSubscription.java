@@ -1,9 +1,16 @@
 package com.dqr.poloniex.handler;
 
+import com.dqr.poloniex.dto.*;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import lombok.extern.java.Log;
 import rx.functions.Action1;
 import ws.wamp.jawampa.PubSubData;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.Iterator;
 
 //import org.apache.logging.log4j.LogManager;
 //import org.apache.logging.log4j.Logger;
@@ -26,12 +33,77 @@ public class PoloniexSubscription implements Action1<PubSubData> {
 
     @Override
     public void call(PubSubData event) {
+        String data = event.arguments().toString();
         try {
-            System.out.println(event.arguments().toString());
+            // System.out.println(event.arguments().toString());
+            ArrayNode arrayNode = event.arguments();
             // TODO Do the parsing here
+            if (data.contains("type")) {
+                Iterator<JsonNode> elementsIterator = arrayNode.iterator();
+                while (elementsIterator.hasNext()) {
+                    JsonNode node = elementsIterator.next();
+                    if (node.toString().contains("orderBookRemove")) {
+                        OrderBookRemove obr = parseOrderBookRemove(node.toString());
+                        System.out.println(obr.toString());
+                    }
+                    if (node.toString().contains("orderBookModify")) {
+                        OrderBookModify obm = parseOrderBookModify(node.toString());
+                        System.out.println(obm.toString());
+                    }
+                    if (node.toString().contains("newTrade")) {
+                        NewTrade nt = parseNewTrade(node.toString());
+                        System.out.println(nt.toString());
+                    }
+                }
+            } else {
+                String preparedData = data.replace("[", "");
+                preparedData = preparedData.replace("]", "");
+                preparedData = preparedData.replace("\"", "");
+                String fields[] = preparedData.split(",");
+
+                if (data.contains("trollboxMessage")) {
+                    Trollbox trollbox = new Trollbox();
+                    trollbox.setType(fields[0]);
+                    trollbox.setMessageNumber(new Long(fields[1]));
+                    trollbox.setUsername(fields[2]);
+                    trollbox.setMessage(fields[3]);
+                    trollbox.setReputation(new Integer(fields[4]));
+
+                    System.out.println(trollbox.toString());
+                    
+                } else {
+                    Ticker ticker = new Ticker();
+
+                    ticker.setCurrencyPair(fields[0]);
+                    ticker.setLast(new BigDecimal(fields[1]));
+                    ticker.setLowestAsk(new BigDecimal(fields[2]));
+                    ticker.setHighestBid(new BigDecimal(fields[3]));
+                    ticker.setPercentChange(new BigDecimal(fields[4]));
+                    ticker.setBaseVolume(new BigDecimal(fields[5]));
+                    ticker.setQuoteVolume(new BigDecimal(fields[6]));
+                    ticker.setIsFrozen(new Boolean(fields[7]));
+                    ticker.setHigh24Hour(new BigDecimal(fields[8]));
+                    ticker.setLow24Hour(new BigDecimal(fields[9]));
+
+                    System.out.println(ticker.toString());
+                }
+            }
         } catch (Exception ex) {
             log.warning("Exception processing event data - " + ex.getMessage());
         }
+    }
+
+    private OrderBookRemove parseOrderBookRemove(String json) throws IOException {
+        OrderBookRemove obr = objectMapper.readValue(json, OrderBookRemove.class);
+        return obr;
+    }
+    private OrderBookModify parseOrderBookModify(String json) throws IOException {
+        OrderBookModify obm = objectMapper.readValue(json, OrderBookModify.class);
+        return obm;
+    }
+    private NewTrade parseNewTrade(String json) throws IOException {
+        NewTrade nt = objectMapper.readValue(json, NewTrade.class);
+        return nt;
     }
     /*
         INFO: Connected

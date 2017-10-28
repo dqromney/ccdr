@@ -38,5 +38,27 @@ public final class NewTrade {
             this.tradeID = tradeID;
             this.type = type;
         }
+
+        @Override
+        public String toString() {
+            final StringBuilder sb = new StringBuilder("Data{");
+            sb.append("amount='").append(amount).append('\'');
+            sb.append(", date='").append(date).append('\'');
+            sb.append(", rate='").append(rate).append('\'');
+            sb.append(", total='").append(total).append('\'');
+            sb.append(", tradeID='").append(tradeID).append('\'');
+            sb.append(", type='").append(type).append('\'');
+            sb.append('}');
+            return sb.toString();
+        }
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("NewTrade{");
+        sb.append("type='").append(type).append('\'');
+        sb.append(", data=").append(data);
+        sb.append('}');
+        return sb.toString();
     }
 }
