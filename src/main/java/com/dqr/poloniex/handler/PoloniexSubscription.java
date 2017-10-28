@@ -62,35 +62,43 @@ public class PoloniexSubscription implements Action1<PubSubData> {
                 String fields[] = preparedData.split(",");
 
                 if (data.contains("trollboxMessage")) {
-                    Trollbox trollbox = new Trollbox();
-                    trollbox.setType(fields[0]);
-                    trollbox.setMessageNumber(new Long(fields[1]));
-                    trollbox.setUsername(fields[2]);
-                    trollbox.setMessage(fields[3]);
-                    trollbox.setReputation(new Integer(fields[4]));
-
+                    Trollbox trollbox = populateTrollbox(fields);
                     System.out.println(trollbox.toString());
                     
                 } else {
-                    Ticker ticker = new Ticker();
-
-                    ticker.setCurrencyPair(fields[0]);
-                    ticker.setLast(new BigDecimal(fields[1]));
-                    ticker.setLowestAsk(new BigDecimal(fields[2]));
-                    ticker.setHighestBid(new BigDecimal(fields[3]));
-                    ticker.setPercentChange(new BigDecimal(fields[4]));
-                    ticker.setBaseVolume(new BigDecimal(fields[5]));
-                    ticker.setQuoteVolume(new BigDecimal(fields[6]));
-                    ticker.setIsFrozen(new Boolean(fields[7]));
-                    ticker.setHigh24Hour(new BigDecimal(fields[8]));
-                    ticker.setLow24Hour(new BigDecimal(fields[9]));
-
+                    Ticker ticker = populateTicker(fields);
                     System.out.println(ticker.toString());
                 }
             }
         } catch (Exception ex) {
             log.warning("Exception processing event data - " + ex.getMessage());
         }
+    }
+
+    private Trollbox populateTrollbox(String[] fields) {
+        Trollbox trollbox = new Trollbox();
+        trollbox.setType(fields[0]);
+        trollbox.setMessageNumber(new Long(fields[1]));
+        trollbox.setUsername(fields[2]);
+        trollbox.setMessage(fields[3]);
+        trollbox.setReputation(new Integer(fields[4]));
+        return trollbox;
+    }
+
+    private Ticker populateTicker(String[] fields) {
+        Ticker ticker = new Ticker();
+
+        ticker.setCurrencyPair(fields[0]);
+        ticker.setLast(new BigDecimal(fields[1]));
+        ticker.setLowestAsk(new BigDecimal(fields[2]));
+        ticker.setHighestBid(new BigDecimal(fields[3]));
+        ticker.setPercentChange(new BigDecimal(fields[4]));
+        ticker.setBaseVolume(new BigDecimal(fields[5]));
+        ticker.setQuoteVolume(new BigDecimal(fields[6]));
+        ticker.setIsFrozen(new Boolean(fields[7]));
+        ticker.setHigh24Hour(new BigDecimal(fields[8]));
+        ticker.setLow24Hour(new BigDecimal(fields[9]));
+        return ticker;
     }
 
     private OrderBookRemove parseOrderBookRemove(String json) throws IOException {
